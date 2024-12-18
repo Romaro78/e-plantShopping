@@ -6,7 +6,7 @@ import { addItem } from './CartSlice';
 
 function ProductList() {
     const [showCart, setShowCart] = useState(false);
-    const [showPlants, setShowPlants] = useState(false);
+    const [showPlants, setShowPlants] = useState(true);
     const [addedToCart, setAddedToCart] = useState({});
     const dispatch = useDispatch();
 
@@ -253,7 +253,6 @@ const handlePlantsClick = (e) => {
 
     const handleContinueShopping = (e) => {
     e.preventDefault();
-    setShowPlants(true); // Show the Plants section
     setShowCart(false);  // Hide the Cart section
     };
   // Handle adding a plant to the cart
