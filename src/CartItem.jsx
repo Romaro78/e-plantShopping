@@ -20,9 +20,8 @@ const CartItem = ({ onContinueShopping }) => {
   // Handle "Continue Shopping" button click
   const handleContinueShopping = (e) => {
     e.preventDefault();
-    onContinueShopping(); // Call the parent component function
-  };
-
+    if (onContinueShopping) onContinueShopping();
+    };
   // Handle incrementing item quantity
   const handleIncrement = (item) => {
     dispatch(updateQuantity({ name: item.name, quantity: item.quantity + 1 }));
@@ -84,18 +83,11 @@ const CartItem = ({ onContinueShopping }) => {
             </div>
           </div>
         ))}
-      </div>
-      <div className="continue_shopping_btn">
-        <button
-          className="get-started-button"
-          onClick={(e) => {
-            e.preventDefault();
-            handleContinueShopping();
-          }}
-        >
-          Continue Shopping
-        </button>
         <br />
+        <button
+        className="get-started-button1" 
+        onClick={handleContinueShopping}>Continue Shopping</button>
+      <br />
         <button
           className="get-started-button1"
           onClick={() => alert('Functionality to be added for future reference')}
@@ -103,7 +95,7 @@ const CartItem = ({ onContinueShopping }) => {
           Checkout
         </button>
       </div>
-    </div>
+      </div>
   );
 };
 
