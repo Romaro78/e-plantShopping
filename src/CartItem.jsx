@@ -90,7 +90,7 @@ const CartItem = ({ onContinueShopping }) => {
           className="get-started-button"
           onClick={(e) => {
             e.preventDefault();
-            onContinueShopping();
+            handleContinueShopping();
           }}
         >
           Continue Shopping
